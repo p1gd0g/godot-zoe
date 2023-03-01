@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://script/ColorRectBg.cs" type="Script" id=1]
 [ext_resource path="res://script/Root.cs" type="Script" id=2]
 [ext_resource path="res://Zoe.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/LabelTimer.cs" type="Script" id=4]
 [ext_resource path="res://art/Slot_F_MagicCarpet.png" type="Texture" id=5]
+[ext_resource path="res://script/RigidBody2D_floor.cs" type="Script" id=6]
 
-[sub_resource type="LineShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Node" type="Node"]
 script = ExtResource( 2 )
@@ -19,27 +20,27 @@ script = ExtResource( 1 )
 zoeScene = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="ColorRect"]
-anchor_left = 0.5
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -512.0
+margin_left = -1024.0
 margin_top = -600.0
-margin_right = 512.0
+rect_pivot_offset = Vector2( 1024, 600 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="ColorRect/Control"]
-position = Vector2( 505, 538 )
-scale = Vector2( 1, 1 )
+position = Vector2( 769, 534 )
 mode = 1
+script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="ColorRect/Control/RigidBody2D"]
-position = Vector2( 3.05176e-05, 0 )
+position = Vector2( -3.05176e-05, 0 )
 scale = Vector2( 1, 0.476563 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Control/RigidBody2D"]
 position = Vector2( 3.05176e-05, 0 )
-scale = Vector2( 1.866, 1 )
+scale = Vector2( 17.026, 1 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="ColorRect"]

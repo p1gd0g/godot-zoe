@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kkkmUvqIE0wUctEX+7Umdjd1mHHnysP8JmeKoUAuSnyt4L7aVHtx0VwDIPY6V06wV9peYrf4JkL3QJPXP5IcCw==",
+  "dgSpecHash": "tDMW5ot3HrdK/u73gnlnxWRFSa+uMuQFLosZssQal+IM2ffnM8B3ap2qAEY8lJXaB8bp8uxcpwmtuaPEMn28Hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\renha\\Documents\\hello_zoe\\hello_zoe.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\renha\\code\\godot-zoe\\hello_zoe.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\renha\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\renha\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
