@@ -20,7 +20,7 @@ public class LabelTimer : Label
     public override void _Process(float delta)
     {
         var ts = DateTime.Now.Subtract(_dateTime);
-        this.Text = string.Format("{0:%d} d, {0:%h} h, {0:%m} m, {0:%s} s", ts);
+        this.Text = string.Format("Love started from {0:%d} d, {0:%h} h, {0:%m} m, {0:%s} s", ts);
 
     }
 
