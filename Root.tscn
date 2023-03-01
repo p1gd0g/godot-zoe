@@ -18,17 +18,26 @@ color = Color( 0.0784314, 0.337255, 0.286275, 1 )
 script = ExtResource( 1 )
 zoeScene = ExtResource( 3 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="ColorRect"]
+[node name="Control" type="Control" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = 512.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="ColorRect/Control"]
 position = Vector2( 505, 538 )
 scale = Vector2( 1, 1 )
 mode = 1
 
-[node name="Sprite" type="Sprite" parent="ColorRect/RigidBody2D"]
+[node name="Sprite" type="Sprite" parent="ColorRect/Control/RigidBody2D"]
 position = Vector2( 3.05176e-05, 0 )
 scale = Vector2( 1, 0.476563 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Control/RigidBody2D"]
 position = Vector2( 3.05176e-05, 0 )
 scale = Vector2( 1.866, 1 )
 shape = SubResource( 1 )
