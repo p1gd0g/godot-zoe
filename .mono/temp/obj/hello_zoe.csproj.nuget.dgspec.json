@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renha\\code\\godot-zoe\\hello_zoe.csproj": {}
+    "C:\\Users\\renha\\Documents\\hello_zoe\\hello_zoe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renha\\code\\godot-zoe\\hello_zoe.csproj": {
+    "C:\\Users\\renha\\Documents\\hello_zoe\\hello_zoe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renha\\code\\godot-zoe\\hello_zoe.csproj",
+        "projectUniqueName": "C:\\Users\\renha\\Documents\\hello_zoe\\hello_zoe.csproj",
         "projectName": "hello_zoe",
-        "projectPath": "C:\\Users\\renha\\code\\godot-zoe\\hello_zoe.csproj",
+        "projectPath": "C:\\Users\\renha\\Documents\\hello_zoe\\hello_zoe.csproj",
         "packagesPath": "C:\\Users\\renha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renha\\code\\godot-zoe\\.mono\\temp\\obj\\",
+        "outputPath": "C:\\Users\\renha\\Documents\\hello_zoe\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,15 +37,7 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "dependencies": {
-            "Microsoft.NETFramework.ReferenceAssemblies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.2, )",
-              "autoReferenced": true
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
