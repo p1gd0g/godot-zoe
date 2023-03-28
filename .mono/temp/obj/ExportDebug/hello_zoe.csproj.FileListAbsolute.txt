@@ -1,9 +1,0 @@
-C:\Users\renha\Documents\hello_zoe\.mono\temp\bin\ExportDebug\hello_zoe.dll
-C:\Users\renha\Documents\hello_zoe\.mono\temp\bin\ExportDebug\hello_zoe.pdb
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.csproj.AssemblyReference.cache
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.AssemblyInfoInputs.cache
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.AssemblyInfo.cs
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.csproj.CoreCompileInputs.cache
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.dll
-C:\Users\renha\Documents\hello_zoe\.mono\temp\obj\ExportDebug\hello_zoe.pdb
