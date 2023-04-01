@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="hello_zoe"
-run/main_scene="res://Root.tscn"
+run/main_scene="res://scene/Root.tscn"
 config/icon="res://icon.png"
 
 [gui]
