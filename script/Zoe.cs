@@ -10,22 +10,31 @@ public class Zoe : Node2D
 
     [Export]
     public NodePath _timerPath;
+    [Export]
+    public NodePath _rigidPath;
 
 
     public Timer _timer;
+    public RigidBody2D _rigid;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         _timer = GetNode<Timer>(_timerPath);
-        _timer.Connect("timeout", this, "OnTimerTimeout");
-
-
+        _rigid = GetNode<RigidBody2D>(_rigidPath);
+        // _timer.Connect("timeout", this, "OnTimerTimeout");
     }
 
     void OnTimerTimeout()
     {
         QueueFree();
+    }
+
+
+    void OnCollision(Node body)
+    {
+        var parent = GetParent<ColorRectBg>();
+        parent.doCount();
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.

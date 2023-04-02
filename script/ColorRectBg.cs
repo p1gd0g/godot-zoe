@@ -9,19 +9,22 @@ public class ColorRectBg : ColorRect
     [Export]
     NodePath _timerPath;
 
+    [Export]
+    NodePath _counterPath;
+
+    public Label _counter;
+
 
     Timer _timer;
 
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    int counter = 0;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         _timer = (Timer)GetNode(_timerPath);
-        _timer.Connect("timeout", this, nameof(OnTimerTimeout));
-        _timer.Start();
+        _counter = (Label)GetNode(_counterPath);
+
     }
 
 
@@ -40,6 +43,14 @@ public class ColorRectBg : ColorRect
     //  {
     //
     //  }
+
+
+    public void doCount()
+    {
+        counter++;
+        _counter.Text = string.Format("你接住了 {0} 个曾晴！", counter);
+    }
+
 
     public override void _Input(InputEvent @event)
     {

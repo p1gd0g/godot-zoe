@@ -259,7 +259,7 @@ public class VirtualJoystick : Control
 
     void moveTip(Vector2 point)
     {
-        GD.Print("moveTip", point);
+        // GD.Print("moveTip", point);
         // _tip.rect_global_position = new_position - _tip.rect_pivot_offset * _base.get_global_transform_with_canvas().get_scale()
         _tip.RectGlobalPosition = point - _tip.RectPivotOffset * _base.GetGlobalTransformWithCanvas().Scale;
     }

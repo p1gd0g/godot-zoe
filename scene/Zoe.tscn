@@ -14,10 +14,13 @@ height = 44.0
 scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 1 )
 _timerPath = NodePath("Timer")
+_rigidPath = NodePath("RigidBody2D")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_material_override = SubResource( 2 )
 gravity_scale = 8.0
+contacts_reported = 1
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
 position = Vector2( 0, 20 )
@@ -30,3 +33,6 @@ shape = SubResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="OnCollision" flags=6]
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
