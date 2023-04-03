@@ -41,7 +41,7 @@ __meta__ = {
 "_edit_group_": true
 }
 joystickLeftPath = NodePath("../../../UI/Virtual joystick")
-speed = 333.0
+speed = 555.0
 
 [node name="Sprite" type="Sprite" parent="ColorRect/Control/RigidBody2D"]
 scale = Vector2( 1, 0.476563 )
