@@ -10,10 +10,13 @@ public class ColorRectBg : ColorRect
     NodePath _timerPath;
 
     [Export]
-    NodePath _counterPath;
+    NodePath _counterPath, _httpPath;
+
 
     public Label _counter;
 
+
+    HTTPRequest _http;
 
     Timer _timer;
 
@@ -24,7 +27,27 @@ public class ColorRectBg : ColorRect
     {
         _timer = (Timer)GetNode(_timerPath);
         _counter = (Label)GetNode(_counterPath);
+        _http = (HTTPRequest)GetNode(_httpPath);
+        _http.Request("http://176.122.139.160:8090/hello");
+    }
 
+    void OnRequestCompleted(int result = 0, int responseCode = 0, string[] headers = null, byte[] body = null)
+    {
+        GD.Print("OnRequestCompleted");
+        GD.Print("result: ", result);
+        GD.Print("responseCode: ", responseCode);
+        GD.Print("headers: ", headers);
+        GD.Print("body: ", body);
+        GD.Print("body: ", body.Length);
+
+        string str = System.Text.Encoding.UTF8.GetString(body);
+
+        GD.Print("body: ", str);
+
+        if (str.Length > 0)
+        {
+            counter = int.Parse(str);
+        }
     }
 
 
@@ -49,6 +72,7 @@ public class ColorRectBg : ColorRect
     {
         counter++;
         _counter.Text = string.Format("你接住了 {0} 个曾晴！", counter);
+        _http.Request("http://176.122.139.160:8090/bye");
     }
 
 

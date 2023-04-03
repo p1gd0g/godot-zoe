@@ -22,6 +22,7 @@ script = ExtResource( 5 )
 zoeScene = ExtResource( 2 )
 _timerPath = NodePath("Timer")
 _counterPath = NodePath("../UI/counter")
+_httpPath = NodePath("HTTPRequest")
 
 [node name="Timer" type="Timer" parent="ColorRect"]
 autostart = true
@@ -50,6 +51,8 @@ texture = ExtResource( 1 )
 position = Vector2( 6.10352e-05, 0 )
 scale = Vector2( 17.026, 1 )
 shape = SubResource( 1 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="ColorRect"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -83,3 +86,4 @@ align = 1
 valign = 1
 
 [connection signal="timeout" from="ColorRect/Timer" to="ColorRect" method="OnTimerTimeout"]
+[connection signal="request_completed" from="ColorRect/HTTPRequest" to="ColorRect" method="OnRequestCompleted"]
