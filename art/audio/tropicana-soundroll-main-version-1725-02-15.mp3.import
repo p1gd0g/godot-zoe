@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tropicana-soundroll-main-version-1725-02-15.mp3-d08d19df8a08f0c5af6f338f8af811b8.mp3str"
+
+[deps]
+
+source_file="res://art/audio/tropicana-soundroll-main-version-1725-02-15.mp3"
+dest_files=[ "res://.import/tropicana-soundroll-main-version-1725-02-15.mp3-d08d19df8a08f0c5af6f338f8af811b8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
