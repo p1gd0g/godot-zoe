@@ -33,16 +33,16 @@ public class ColorRectBg : ColorRect
 
     void OnRequestCompleted(int result = 0, int responseCode = 0, string[] headers = null, byte[] body = null)
     {
-        GD.Print("OnRequestCompleted");
-        GD.Print("result: ", result);
-        GD.Print("responseCode: ", responseCode);
-        GD.Print("headers: ", headers);
-        GD.Print("body: ", body);
-        GD.Print("body: ", body.Length);
+        // GD.Print("OnRequestCompleted");
+        // GD.Print("result: ", result);
+        // GD.Print("responseCode: ", responseCode);
+        // GD.Print("headers: ", headers);
+        // GD.Print("body: ", body);
+        // GD.Print("body: ", body.Length);
 
         string str = System.Text.Encoding.UTF8.GetString(body);
 
-        GD.Print("body: ", str);
+        // GD.Print("body: ", str);
 
         if (str.Length > 0)
         {
