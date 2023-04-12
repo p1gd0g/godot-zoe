@@ -9,7 +9,7 @@
 [ext_resource path="res://script/RigidBody2D_floor.cs" type="Script" id=7]
 [ext_resource path="res://art/Chinese.tres" type="DynamicFont" id=8]
 [ext_resource path="res://art/audio/tropicana-soundroll-main-version-1725-02-15.mp3" type="AudioStream" id=9]
-[ext_resource path="res://script/counter.gd" type="Script" id=10]
+[ext_resource path="res://script/FirebaseHelper.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -86,11 +86,13 @@ margin_bottom = 50.0
 custom_fonts/font = ExtResource( 8 )
 align = 1
 valign = 1
-script = ExtResource( 10 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="FirebaseHelper" type="Node" parent="."]
+script = ExtResource( 10 )
 
 [connection signal="timeout" from="ColorRect/Timer" to="ColorRect" method="OnTimerTimeout"]
 [connection signal="request_completed" from="ColorRect/HTTPRequest" to="ColorRect" method="OnRequestCompleted"]
