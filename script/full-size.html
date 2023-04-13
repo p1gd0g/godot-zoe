@@ -272,7 +272,7 @@
 		// Import the functions you need from the SDKs you need
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
-		import { getMessaging } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-messaging.js";
+		import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-messaging.js";
 
 		// TODO: Add SDKs for Firebase products that you want to use
 		// https://firebase.google.com/docs/web/setup#available-libraries
@@ -292,9 +292,9 @@
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
 		const analytics = getAnalytics(app);
-
 		const messaging = getMessaging(app);
-		messaging.getToken({ vapidKey: "BOkGc8ccUr3S0RoaGitzd1uDIl64H-z_DNwJNUblDRcEHHxeMGuEOWLsMri-jMfyTjsg-fJzv2Yp5Ojt1QoUDAU" }).then((currentToken) => {
+
+		getToken(messaging, { vapidKey: "BOkGc8ccUr3S0RoaGitzd1uDIl64H-z_DNwJNUblDRcEHHxeMGuEOWLsMri-jMfyTjsg-fJzv2Yp5Ojt1QoUDAU" }).then((currentToken) => {
 			if (currentToken) {
 				console.log('Token: ', currentToken)
 			} else {
@@ -302,6 +302,10 @@
 			}
 		}).catch((err) => {
 			console.log('An error occurred while retrieving token. ', err);
+		});
+
+		onMessage((payload) => {
+			console.log('Message received. ', payload);
 		});
 
 		requestPermission()
