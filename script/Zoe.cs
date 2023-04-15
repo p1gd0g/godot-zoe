@@ -7,6 +7,8 @@ public class Zoe : Node2D
     // private int a = 2;
     // private string b = "text";
 
+    [Signal]
+    public delegate void DoCount();
 
     [Export]
     public NodePath _timerPath;
@@ -22,7 +24,6 @@ public class Zoe : Node2D
     {
         _timer = GetNode<Timer>(_timerPath);
         _rigid = GetNode<RigidBody2D>(_rigidPath);
-        // _timer.Connect("timeout", this, "OnTimerTimeout");
     }
 
     void OnTimerTimeout()
@@ -34,12 +35,9 @@ public class Zoe : Node2D
     void OnCollision(Node body)
     {
         var parent = GetParent<ColorRectBg>();
-        parent.doCount();
+        // parent.doCount();
+        EmitSignal("DoCount");
     }
 
-    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-    //  public override void _Process(float delta)
-    //  {
-    //
-    //  }
+
 }

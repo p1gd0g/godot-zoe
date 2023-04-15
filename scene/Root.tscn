@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://art/Slot_F_MagicCarpet.png" type="Texture" id=1]
 [ext_resource path="res://scene/Zoe.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://art/Chinese.tres" type="DynamicFont" id=8]
 [ext_resource path="res://art/audio/tropicana-soundroll-main-version-1725-02-15.mp3" type="AudioStream" id=9]
 [ext_resource path="res://script/FirebaseHelper.gd" type="Script" id=10]
+[ext_resource path="res://script/counterer.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,7 +25,6 @@ script = ExtResource( 5 )
 zoeScene = ExtResource( 2 )
 _timerPath = NodePath("Timer")
 _counterPath = NodePath("../UI/counter")
-_httpPath = NodePath("HTTPRequest")
 
 [node name="Timer" type="Timer" parent="ColorRect"]
 autostart = true
@@ -50,8 +50,6 @@ texture = ExtResource( 1 )
 position = Vector2( 6.10352e-05, 0 )
 scale = Vector2( 17.026, 1 )
 shape = SubResource( 1 )
-
-[node name="HTTPRequest" type="HTTPRequest" parent="ColorRect"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -83,6 +81,7 @@ margin_bottom = 50.0
 custom_fonts/font = ExtResource( 8 )
 align = 1
 valign = 1
+script = ExtResource( 11 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
@@ -92,4 +91,4 @@ autoplay = true
 script = ExtResource( 10 )
 
 [connection signal="timeout" from="ColorRect/Timer" to="ColorRect" method="OnTimerTimeout"]
-[connection signal="request_completed" from="ColorRect/HTTPRequest" to="ColorRect" method="OnRequestCompleted"]
+[connection signal="init_count" from="FirebaseHelper" to="UI/counter" method="_on_FirebaseHelper_init_count"]

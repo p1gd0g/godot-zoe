@@ -19,8 +19,6 @@ public class RigidBody2D_floor : RigidBody2D
     public override void _Ready()
     {
         joystickLeft = (VirtualJoystick)GetNode(joystickLeftPath);
-
-
         // this.TweenRight();
     }
 
@@ -46,7 +44,8 @@ public class RigidBody2D_floor : RigidBody2D
 
         Tween tween = new Tween();
         AddChild(tween);
-        tween.InterpolateProperty(this, "position", v, new Vector2(100, v.y), 1, Tween.TransitionType.Linear, Tween.EaseType.InOut);
+        tween.InterpolateProperty(this, "position", v, new Vector2(100, v.y), 1,
+            Tween.TransitionType.Linear, Tween.EaseType.InOut);
 
         tween.Repeat = true;
         tween.Start();
