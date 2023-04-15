@@ -15,16 +15,24 @@ func _ready():
 	Firebase.Auth.connect("login_failed", self, "on_login_failed")
 	Firebase.Auth.connect("signup_failed", self, "on_signup_failed")
 	Firebase.Auth.connect("userdata_received", self, "on_userdata_received")
+	Firebase.Auth.connect("auth_request", self, "on_auth_request")
 
-	# yield(get_tree().create_timer(3), "timeout")
-
-	Firebase.Auth.login_anonymous()
+	Firebase.Auth.check_auth_file()
 
 	pass # Replace with function body.
 
+
+func on_auth_request(err, msg):
+	if err && err != 1:
+		print(err, msg)
+		Firebase.Auth.login_anonymous()
+	else:
+		print("login succeeded")
+		print(msg)
+
 func _on_FirebaseAuth_login_succeeded(auth):
 	print("login succeeded", auth)
-	Firebase.Auth.get_user_data()
+	Firebase.Auth.save_auth(auth)
 
 func on_login_failed(error_code, message):
 	print("error code: " + str(error_code))
